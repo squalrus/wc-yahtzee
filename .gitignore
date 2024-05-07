@@ -3,14 +3,14 @@
 /test/
 custom-elements.json
 # top level source
-score.js
-score.js.map
-score.d.ts
-score.d.ts.map
-yahtzee.js
-yahtzee.js.map
-yahtzee.d.ts
-yahtzee.d.ts.map
+dist/score.js
+dist/score.js.map
+dist/score.d.ts
+dist/score.d.ts.map
+dist/yahtzee.js
+dist/yahtzee.js.map
+dist/yahtzee.d.ts
+dist/yahtzee.d.ts.map
 # only generated for size check
-score.bundled.js
-yahtzee.bundled.js
+dist/score.bundled.js
+dist/yahtzee.bundled.js
