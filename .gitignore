@@ -3,9 +3,14 @@
 /test/
 custom-elements.json
 # top level source
-my-element.js
-my-element.js.map
-my-element.d.ts
-my-element.d.ts.map
+score.js
+score.js.map
+score.d.ts
+score.d.ts.map
+yahtzee.js
+yahtzee.js.map
+yahtzee.d.ts
+yahtzee.d.ts.map
 # only generated for size check
-my-element.bundled.js
+score.bundled.js
+yahtzee.bundled.js
