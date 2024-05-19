@@ -68,9 +68,6 @@ export class Yahtzee extends LitElement {
       padding-right: 4px;
     }
 
-    .rule {
-    }
-
     td.rule {
       font-size: 11px;
       padding-left: 24px;
@@ -262,7 +259,7 @@ export class Yahtzee extends LitElement {
       <th class="label">${label}</th>
       <th class="rule"></th>
       <td class="score">
-        <input type="text" value="${value}" readonly="readonly" />
+        <input type="text" value="${value}" readonly />
       </td>
     </tr>`;
   }
