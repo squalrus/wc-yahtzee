@@ -78,26 +78,26 @@ export class Yahtzee extends LitElement {
       width: 20%;
     }
 
-    .score input[type='text'] {
+    .score input[type='number'] {
       float: right;
       width: 50px;
     }
 
-    input[type='text'] {
+    input[type='number'] {
       border: none;
       font-size: 18px;
       padding: 3px;
     }
 
-    input[type='text']:valid {
+    input[type='number']:valid {
       background-color: #ffffff;
     }
 
-    input[type='text']:invalid {
+    input[type='number']:invalid {
       background-color: lightpink;
     }
 
-    input[type='text'][readonly] {
+    input[type='number'][readonly] {
       background-color: #f9f9f9;
     }
   `;
@@ -259,7 +259,7 @@ export class Yahtzee extends LitElement {
       <th class="label">${label}</th>
       <th class="rule"></th>
       <td class="score">
-        <input type="text" value="${value}" readonly />
+        <input type="number" value="${value}" readonly />
       </td>
     </tr>`;
   }
@@ -270,7 +270,7 @@ export class Yahtzee extends LitElement {
       <td class="rule">${row.rule}</td>
       <td class="score">
         <input
-          type="text"
+          type="number"
           @keyup="${this._updateScore}"
           id="${row.id}"
           pattern="${row.pattern !== undefined ? row.pattern : false}"
