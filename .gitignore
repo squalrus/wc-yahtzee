@@ -2,15 +2,5 @@
 /lib/
 /test/
 custom-elements.json
-# top level source
-dist/score.js
-dist/score.js.map
-dist/score.d.ts
-dist/score.d.ts.map
-dist/yahtzee.js
-dist/yahtzee.js.map
-dist/yahtzee.d.ts
-dist/yahtzee.d.ts.map
-# only generated for size check
-dist/score.bundled.js
-dist/yahtzee.bundled.js
+dist/bundle.js
+dist/bundle.js.LICENSE.txt
