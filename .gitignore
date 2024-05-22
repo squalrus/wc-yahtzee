@@ -2,8 +2,8 @@
 /lib/
 /test/
 custom-elements.json
-dist/bundle.js
-dist/bundle.js.LICENSE.txt
+dist/yahtzee.js
+dist/yahtzee.js.LICENSE.txt
 dist/score.d.ts
 dist/score.d.ts.map
 dist/yahtzee.d.ts
