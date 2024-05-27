@@ -78,26 +78,31 @@ export class Yahtzee extends LitElement {
       width: 20%;
     }
 
-    .score input[type='number'] {
+    .score input[type='number'],
+    .score select {
       float: right;
       width: 50px;
     }
 
-    input[type='number'] {
+    input[type='number'],
+    select {
       border: none;
       font-size: 18px;
       padding: 3px;
     }
 
-    input[type='number']:valid {
+    input[type='number']:valid,
+    select:valid {
       background-color: #ffffff;
     }
 
-    input[type='number']:invalid {
+    input[type='number']:invalid,
+    select:invalid {
       background-color: lightpink;
     }
 
-    input[type='number'][readonly] {
+    input[type='number'][readonly],
+    select[readonly] {
       background-color: #f9f9f9;
     }
   `;
@@ -238,12 +243,10 @@ export class Yahtzee extends LitElement {
   private _calculateTotals() {
     let upper = 0;
     let lower = 0;
-    let total = 0;
 
     this.scores.forEach((element) => {
       upper = upper + (element.id.startsWith('u') ? element.score : 0);
       lower += element.id.startsWith('l') ? element.score : 0;
-      total += element.score;
     });
 
     this.bonusScore = upper >= 63 ? 35 : 0;
@@ -290,20 +293,29 @@ export class Yahtzee extends LitElement {
     </tr>`;
   }
 
+  private _renderOptions(min: number, max: number, step: number) {
+    const options = [];
+
+    for (let i = min; i <= max; i += step) {
+      options.push(html`<option>${i}</option>`);
+    }
+
+    return options;
+  }
+
   private _renderRow(row: Score) {
     return html` <tr>
       <th class="label">${unsafeHTML(String(row.label))}</th>
       <td class="rule">${row.rule}</td>
       <td class="score">
-        <input
-          type="number"
+        <select
           @keyup="${this._updateScore}"
           @change="${this._updateScore}"
           id="${row.id}"
-          min="${row.min !== undefined ? row.min : false}"
-          max="${row.max !== undefined ? row.max : false}"
-          step="${row.step !== undefined ? row.step : false}"
-        />
+        >
+          <option></option>
+          ${this._renderOptions(row.min, row.max, row.step)}
+        </select>
       </td>
     </tr>`;
   }
