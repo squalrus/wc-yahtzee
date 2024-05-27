@@ -3,7 +3,7 @@ export interface Score {
   label: string;
   score: number;
   rule: string;
-  min?: number;
-  max?: number;
-  step?: number;
+  min: number;
+  max: number;
+  step: number;
 }
